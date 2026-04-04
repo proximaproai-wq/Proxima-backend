@@ -36,9 +36,8 @@ You are a professional career analyst.
 Analyze the resume against the job description and return:
 IMPORTANT: Follow this format EXACTLY. Do not change structure for any resume uploaded:
 1. Candidate summary as per their uploaded resume. (Do not mention them by their name, just summarise their resume)
-Paragraphy
+-
 2. Match Score (0/100)
--...
 3. Missing Skills (clear bullet points)
 -...
 4. Strengths (clear bullet points)
