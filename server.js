@@ -35,8 +35,7 @@ You are a professional career analyst.
 
 Analyze the resume against the job description and return:
 IMPORTANT: Follow this format EXACTLY. Do not change structure for any resume uploaded:
-1. Candidate summary as per their uploaded resume. (Do not mention them by their name, just summarise their resume)
--
+1. Candidate verdict for this role. (Be honest)
 2. Match Score (0/100)
 3. Missing Skills (clear bullet points)
 -...
@@ -58,6 +57,7 @@ Rules:
 - Think twice than again twice before generating any answers.
 - Be mindfull of such things (It was noticed a person with CPA Degree and a person with just a M.com degree was given the same percentage score this cannot be possible as the person with CPA degreee was a Senior manager and the person with M.com was just a analyst)
 - Do deep analysis of their resume and then do a deep analysis of the job description then give the score after thinking again.
+- Be Honest with everything we are helping the candidate and buttering them up is not our plan. They upskill them self and then get selcted is our firm business.
 `
 },
 {
