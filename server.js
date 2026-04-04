@@ -40,7 +40,7 @@ DO NOT change wording, headings, or structure under any condition.
 ----------------------------------------
 
 Verdict Summary:
-Provide a clear and honest evaluation of how well the candidate fits the role. Give a summary basis the evaluation
+Provide a clear and honest evaluation of how well the candidate fits the role. When giving summary mention the candidate as "You".
 Clearly mention if they are:
 - Strong fit
 - Moderate fit
@@ -90,7 +90,7 @@ Rules:
 - Be accurate and realistic (no inflated scores)
 - Be honest, not polite
 - Think deeply before assigning score
-- In free course add youtube as wells
+- In free course add youtube links as wells
 `
 },
 {
