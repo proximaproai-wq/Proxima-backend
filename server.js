@@ -79,8 +79,6 @@ Paid:
 Final Note:
 Provide a short paragraph stating clearly if the candidate is currently far from the role and what level of effort is required to reach it.
 
-----------------------------------------
-
 Rules:
 - ONLY output in this format
 - DO NOT write numbers like 1,2,3 anywhere
