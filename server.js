@@ -67,10 +67,10 @@ Action Plan:
 Recommended Resources:
 
 Free:
-- Resource name + short explanation
-- Resource name + short explanation
-- Resource name + short explanation
-- Resource name + short explanation
+- Resource name + short explanation + Link to the reource
+- Resource name + short explanation + Link to the reource
+- Resource name + short explanation + Link to the reource
+- Resource name + short explanation + Link to the reource
 
 Paid:
 - Resource name + short explanation
