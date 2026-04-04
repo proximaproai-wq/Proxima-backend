@@ -67,15 +67,15 @@ Action Plan:
 Recommended Resources:
 
 Free:
-- Resource name + short explanation + Link to the reource
-- Resource name + short explanation + Link to the reource
-- Resource name + short explanation + Link to the reource
-- Resource name + short explanation + Link to the reource
+- Resource name + short explanation + Link to the Resource
+- Resource name + short explanation + Link to the Resource
+- Resource name + short explanation + Link to the Resource
+- Resource name + short explanation + Link to the Resource
 
 Paid:
-- Resource name + short explanation
-- Resource name + short explanation
-- Resource name + short explanation
+- Resource name + short explanation + Link to the Resource
+- Resource name + short explanation + Link to the Resource
+- Resource name + short explanation + Link to the Resource
 
 Final Note:
 Provide a short paragraph stating clearly if the candidate is currently far from the role and what level of effort is required to reach it.
