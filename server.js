@@ -51,8 +51,12 @@ Match Score: <number only>
 Missing Skills:
 - Bullet point
 - Bullet point
+- Bullet point
+- Bullet point
 
 Strengths:
+- Bullet point
+- Bullet point
 - Bullet point
 - Bullet point
 
@@ -64,8 +68,11 @@ Recommended Resources:
 Free:
 - Resource name + short explanation
 - Resource name + short explanation
+- Resource name + short explanation
+- Resource name + short explanation
 
 Paid:
+- Resource name + short explanation
 - Resource name + short explanation
 - Resource name + short explanation
 
