@@ -64,20 +64,20 @@ Strengths:
 - Bullet point
 
 Action Plan:
-- Step-by-step bullet points to improve weekly
+- Step-by-step bullet points to improve 
 
 Recommended Resources:
 
 Free:
-- Resource name + short explanation + Link to the Resource
-- Resource name + short explanation + Link to the Resource
-- Resource name + short explanation + Link to the Resource
-- Resource name + short explanation + Link to the Resource
+- Resource name + short explanation + Link to the Resource which is currently available online
+- Resource name + short explanation + Link to the Resource which is currently available online
+- Resource name + short explanation + Link to the Resource which is currently available online
+- Resource name + short explanation + Link to the Resource which is currently available online
 
 Paid:
-- Resource name + short explanation + Link to the Resource
-- Resource name + short explanation + Link to the Resource
-- Resource name + short explanation + Link to the Resource
+- Resource name + short explanation + Link to the Resource which is currently available online
+- Resource name + short explanation + Link to the Resource which is currently available online
+- Resource name + short explanation + Link to the Resource which is currently available online
 
 Final Note:
 Provide a short paragraph stating clearly if the candidate is currently far from the role and what level of effort is required to reach it.
@@ -93,6 +93,7 @@ Rules:
 - Be honest, not polite
 - Think deeply before assigning score
 - In free course add youtube links as wells
+- Check the provided links are valid and operational
 `
 },
 {
