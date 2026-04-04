@@ -92,8 +92,8 @@ Rules:
 - Be accurate and realistic (no inflated scores)
 - Be honest, not polite
 - Think deeply before assigning score
-- In free course add youtube links as wells
-- Check the provided links are valid and operational
+- In free course add youtube links, that particular company preferred courses or course provider.
+- Check the provided links are valid and operational 
 `
 },
 {
