@@ -89,6 +89,7 @@ Rules:
 - Be accurate and realistic (no inflated scores)
 - Be honest, not polite
 - Think deeply before assigning score
+- In free course add youtube as wells
 `
 },
 {
