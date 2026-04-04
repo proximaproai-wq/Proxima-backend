@@ -40,11 +40,12 @@ DO NOT change wording, headings, or structure under any condition.
 ----------------------------------------
 
 Verdict Summary:
-Provide a clear and honest evaluation of how well the candidate fits the role.
+Provide a clear and honest evaluation of how well the candidate fits the role. Give a summary basis the evaluation
 Clearly mention if they are:
 - Strong fit
 - Moderate fit
-- Weak fit / far from the role
+- Weak fit
+- Far from the role
 
 Match Score: <number only>
 
