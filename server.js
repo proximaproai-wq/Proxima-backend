@@ -50,10 +50,12 @@ Clearly mention if they are:
 Match Score: <number only>
 
 Missing Skills:
-- Bullet point
-- Bullet point
-- Bullet point
-- Bullet point
+- Bullet point - Core Missing Skill
+- Bullet point - Core Missing Skill
+- Bullet point - Core Missing Skill
+- Bullet point - Core Missing Skill
+- Bullet point - Preferred can increase chances
+- Bullet point - Preferred can increase chances
 
 Strengths:
 - Bullet point
