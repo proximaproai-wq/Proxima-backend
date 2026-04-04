@@ -1,139 +1,92 @@
 const express = require("express");
-const OpenAI = require("openai");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
-const openai = new OpenAI({
- apiKey: process.env.OPENAI_API_KEY,
-});
-
-// ROOT CHECK
-app.get("/", (req, res) => {
- res.send("Proxima Backend Running ");
-});
-
-// TEST ROUTE
-app.get("/test", async (req, res) => {
- try {
- const response = await openai.responses.create({
- model: "gpt-5.4-nano",
- input: "Say hello in one line"
- });
-
- const text = response.output?.[0]?.content?.[0]?.text || "No response";
- res.send(text);
-
- } catch (err) {
- res.status(500).send(err.message);
- }
-});
-
-// MAIN ANALYSIS ROUTE
+// 🔥 YOUR ANALYZE API
 app.post("/analyze", async (req, res) => {
- try {
- const { resume, jobDescription } = req.body;
+try {
+const { resume, jobDescription } = req.body;
 
- // Basic validation
- if (!resume || !jobDescription) {
- return res.status(400).json({
- success: false,
- message: "Resume and Job Description required"
- });
- }
+if (!resume || !jobDescription) {
+return res.status(400).json({
+success: false,
+message: "Missing resume or job description"
+});
+}
 
- // Prevent huge inputs (cost control)
- if (resume.length > 4000 || jobDescription.length > 3000) {
- return res.status(400).json({
- success: false,
- message: "Input too long. Please shorten resume or JD."
- });
- }
+// 🔥 CALL OPENAI
+const response = await fetch("https://api.openai.com/v1/chat/completions", {
+method: "POST",
+headers: {
+"Content-Type": "application/json",
+Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+},
+body: JSON.stringify({
+model: "gpt-4o-mini",
+messages: [
+{
+role: "system",
+content: `
+You are a professional career analyst.
 
- const prompt = `
-You are a senior career consultant.
+Analyze the resume against the job description and return:
 
-Analyze the candidate's resume against the job description.
+1. Match Score (0–100)
+2. Missing Skills (clear bullet points)
+3. Strengths (clear bullet points)
+4. Action Plan (step-by-step improvements)
+5. Recommended Resources:
+- Free (YouTube/blog)
+- Paid (Coursera/Udemy)
+- Short explanation for each
 
-STRICT RULES:
-- Never give 100% match unless PERFECT
-- Always include ALL sections
-- Be realistic and professional
-- Think like a hiring manager
-
-FORMAT:
-
-Match Score: X/100
-
-Verdict:
-(2-3 lines explaining readiness and positioning)
-
-Strengths:
-- 3 to 5 strong relevant points
-
-Key Gaps:
-- list critical missing areas
-
-Career Roadmap:
-
-Phase 1 (0–6 months):
-...
-
-Phase 2 (6–18 months):
-...
-
-Phase 3 (2–5 years):
-...
-
-Learning Plan:
-For each major gap:
-- Skill:
-- Free resources (YouTube/blog/platform)
-- Paid courses (Udemy/Coursera/CFI etc.)
-- Why this matters
-
-Final Insight:
-(1 strong professional closing insight)
-
----
-
-Resume:
+Rules:
+- Be accurate (NO random 100% scores)
+- Always give recommendations
+- Be professional and structured
+`
+},
+{
+role: "user",
+content: `
+RESUME:
 ${resume}
 
----
-
-Job Description:
+JOB DESCRIPTION:
 ${jobDescription}
-`;
-
- const response = await openai.responses.create({
- model: "gpt-5.4-nano",
- input: prompt,
- max_output_tokens: 700
- });
-
- const output =
- response.output?.[0]?.content?.[0]?.text || "No output";
-
- res.json({
- success: true,
- data: output
- });
-
- } catch (error) {
- console.error("ERROR:", error);
-
- res.status(500).json({
- success: false,
- message: error.message || "Server error"
- });
- }
+`
+}
+],
+temperature: 0.7
+})
 });
 
-// PORT FIX FOR RENDER
+const data = await response.json();
+
+const output =
+data.choices?.[0]?.message?.content || "Analysis failed.";
+
+res.json({
+success: true,
+data: output
+});
+
+} catch (error) {
+console.error("ERROR:", error);
+res.status(500).json({
+success: false,
+message: "Server error"
+});
+}
+});
+
+// 🔥 RENDER PORT FIX
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
- console.log("Server running on port " + PORT);
+console.log("Server running on port " + PORT);
 });
