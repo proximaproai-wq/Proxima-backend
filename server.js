@@ -54,8 +54,8 @@ Missing Skills:
 - Bullet point - Core Missing Skill
 - Bullet point - Core Missing Skill
 - Bullet point - Core Missing Skill
-- Bullet point - Preferred can increase chances
-- Bullet point - Preferred can increase chances
+- Bullet point - Can increase chances
+- Bullet point - Can increase chances
 
 Strengths:
 - Bullet point
