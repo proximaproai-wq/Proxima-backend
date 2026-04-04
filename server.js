@@ -64,7 +64,7 @@ Strengths:
 - Bullet point
 
 Action Plan:
-- Step-by-step bullet points to improve
+- Step-by-step bullet points to improve weekly
 
 Recommended Resources:
 
