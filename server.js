@@ -4,7 +4,6 @@ require("dotenv").config();
 
 const { google } = require("googleapis");
 const pdfjsLib = require("pdfjs-dist/legacy/build/pdf.js");
-const fetch = require("node-fetch");
 
 const app = express();
 app.use(cors());
