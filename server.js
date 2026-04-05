@@ -99,14 +99,6 @@ Clearly mention if they are:
 
 Match Score: <number only>
 
-Score Breakdown:
-- Base Score: 100
-- [Missing skill or issue]: -<number> points
-- [Missing skill or issue]: -<number> points
-- [Missing skill or issue]: -<number> points
-- [Missing skill or issue]: -<number> points
-- Final Score: <number>
-
 Missing Skills:
 - Bullet point - Core Missing Skill
 - Bullet point - Core Missing Skill
@@ -158,27 +150,14 @@ Rules:
 - "Can increase chances" bullets are ONLY for nice-to-have or bonus skills not listed as required in JD
 - Do not give above 80 score unless candidate meets ALL core required skills in JD
 - Do not give above 90 unless candidate is a near-perfect match with no core skill gaps
-- A missing required skill must drop the score by at least 5-8 points each
+- A missing required skill must drop the score by at least 8-10 points each
 - If experience years on resume far exceed JD requirement, mention overqualification risk explicitly in Verdict Summary
 - Never assume a skill exists if it is not written on the resume
 - Do not reward seniority if the role does not require it
-- Score Breakdown must always start at Base Score: 100 and deduct points for every gap found
-- Every deduction in Score Breakdown must have a clear reason written next to it
-- Final Score in Score Breakdown must exactly match the Match Score above
-- Deductions must be honest and mathematical - if 4 core skills are missing at 5-8 points each, the math must reflect that
-- Score Breakdown must appear immediately after Match Score and before Missing Skills
-- The Final Score in Score Breakdown must be calculated strictly as: 100 minus all deductions added together. No exceptions.
-- Match Score shown at the top must be copy of Final Score from breakdown.They must ALWAYS be identical. If they differ you have made an error.
-- Salary mismatch must ALWAYS be included as a deduction in Score Breakdown if the JD salary is visibly lower than expected for candidate's experience level
-- SCORING FORMULA — Follow this exactly, no exceptions:
-- Step 1 — Start at 100
-- Step 2 — For every CORE required skill in JD that is NOT on resume: -8 points each
-- Step 3 — For every PREFERRED skill in JD that is NOT on resume: -3 points each
-- Step 4 — If candidate experience EXCEEDS JD requirement by more than 2 years: -8 points
-- Step 5 — If JD salary is clearly below candidate seniority level: -5 points
-- Step 6 — Add all deductions. Subtract from 100. That number IS the Match Score.
-- Step 7 — Match Score at top MUST equal Final Score in breakdown. If they are different, you have made a mistake. Fix it.
-- Step 8 — Never round up. Never adjust for positivity. The math is the score. Period.
+- Fit Level Strong Fit = candidate meets almost all core requirements
+- Fit Level Moderate Fit = candidate meets most but has some core gaps
+- Fit Level Weak Fit = candidate is missing several core requirements
+- Fit Level Far From Role = candidate is fundamentally misaligned with the role
 `
 },
 {
