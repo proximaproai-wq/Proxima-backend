@@ -3,8 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const { google } = require("googleapis");
-const pdfParseLib = require("pdf-parse");
-const pdfParse = typeof pdfParseLib === "function" ? pdfParseLib : pdfParseLib.default;
+const pdfParse = require("pdf-parse/lib/pdf-parse.js");
 const fetch = require("node-fetch");
 
 const app = express();
@@ -35,7 +34,8 @@ const response = await drive.files.get(
 { responseType: "arraybuffer" }
 );
 
-const pdfData = await pdfParse(response.data);
+const buffer = Buffer.from(response.data);
+const pdfData = await pdfParse(buffer);
 return pdfData.text;
 }
 
