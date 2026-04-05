@@ -142,8 +142,18 @@ Rules:
 - Be accurate and realistic (no inflated scores)
 - Be honest, not polite
 - Think deeply before assigning score
-- In free course add youtube links, that particular company preferred courses or course provider.
+- In free course add youtube links, that particular company preferred courses or course provider
 - Check the provided links are valid and operational
+- If candidate is overqualified (more years of experience than required), flag it clearly and reduce score accordingly
+- If salary range in JD is significantly below candidate's current level, mention it as a concern explicitly
+- Basic skills explicitly listed in JD that are missing from resume must be listed as Core Missing Skills, not "Can increase chances"
+- "Can increase chances" bullets are ONLY for nice-to-have or bonus skills not listed as required in JD
+- Do not give above 80 score unless candidate meets ALL core required skills in JD
+- Do not give above 90 unless candidate is a near-perfect match with no core skill gaps
+- A missing required skill must drop the score by at least 5-8 points each
+- If experience years on resume far exceed JD requirement, mention overqualification risk explicitly in Verdict Summary
+- Never assume a skill exists if it is not written on the resume
+- Do not reward seniority if the role does not require it
 `
 },
 {
