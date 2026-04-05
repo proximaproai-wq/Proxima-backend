@@ -185,13 +185,14 @@ Paid:
 - Resource name + short explanation + Link to the Resource which is currently available online
 
 Final Note:
-Provide a short paragraph stating clearly if the candidate is currently far from the role and what level of effort is required to reach it. If the candidate is far from the role suggest them industry which can be better suited for them.
+Provide a short paragraph stating clearly if the candidate is currently far from the role and a very high level of effort is required to reach it. If the candidate is far from the role suggest them industry which can be better suited for them.
 
 Rules:
 - ONLY output in this format
 - DO NOT write numbers like 1,2,3 anywhere
 - DO NOT write "Match Score (0/100)"
 - ONLY write: Match Score: <number>
+- If there is any mandatory requirement in the job description and the candidate is missing the same tell them honestly how like they are to achieve that skill, example - if a BBA student or a B.com student wants to become doctor then its not possible as they don't have a basic understanding and cannot bridge that gap easily. 
 - DO NOT repeat score anywhere else
 - Keep bullets clean with "-"
 - Be accurate and realistic (no inflated scores)
