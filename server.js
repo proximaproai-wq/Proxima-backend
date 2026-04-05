@@ -12,7 +12,7 @@ app.use(express.json());
 
 // 🔥 GOOGLE DRIVE AUTH SETUP (ADDED)
 const auth = new google.auth.GoogleAuth({
-keyFile: "credentials.json",
+credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT),
 scopes: ["https://www.googleapis.com/auth/drive.readonly"]
 });
 
