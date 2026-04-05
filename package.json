@@ -17,6 +17,7 @@
     "googleapis": "^171.4.0",
     "node-fetch": "^3.3.2",
     "openai": "^6.33.0",
-    "pdf-parse": "^2.4.5"
+    "pdf-parse": "^2.4.5",
+    "pdfjs-dist": "^3.11.174"
   }
 }
