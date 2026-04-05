@@ -2,20 +2,58 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+const { google } = require("googleapis"); // 🔥 ADDED
+const pdfParse = require("pdf-parse"); // 🔥 ADDED
+const fetch = require("node-fetch"); // 🔥 ADDED (if not already installed)
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+// 🔥 GOOGLE DRIVE AUTH SETUP (ADDED)
+const auth = new google.auth.GoogleAuth({
+keyFile: "credentials.json",
+scopes: ["https://www.googleapis.com/auth/drive.readonly"]
+});
+
+const drive = google.drive({ version: "v3", auth });
+
+// 🔥 FUNCTION TO EXTRACT FILE ID FROM DRIVE LINK (ADDED)
+function extractFileId(url) {
+const match = url.match(/[-\w]{25,}/);
+return match ? match[0] : null;
+}
+
+// 🔥 FUNCTION TO DOWNLOAD + EXTRACT PDF TEXT (ADDED)
+async function getResumeTextFromDrive(fileUrl) {
+const fileId = extractFileId(fileUrl);
+if (!fileId) throw new Error("Invalid Google Drive link");
+
+const response = await drive.files.get(
+{ fileId, alt: "media" },
+{ responseType: "arraybuffer" }
+);
+
+const pdfData = await pdfParse(response.data);
+return pdfData.text;
+}
+
 // 🔥 YOUR ANALYZE API
 app.post("/analyze", async (req, res) => {
 try {
-const { resume, jobDescription } = req.body;
+let { resume, jobDescription } = req.body;
 
 if (!resume || !jobDescription) {
 return res.status(400).json({
 success: false,
 message: "Missing resume or job description"
 });
+}
+
+// 🔥 NEW: HANDLE GOOGLE DRIVE LINK
+if (resume.includes("drive.google.com")) {
+console.log("📄 Fetching resume from Google Drive...");
+resume = await getResumeTextFromDrive(resume);
 }
 
 // 🔥 CALL OPENAI
@@ -64,7 +102,7 @@ Strengths:
 - Bullet point
 
 Action Plan:
-- Step-by-step bullet points to improve 
+- Step-by-step bullet points to improve
 
 Recommended Resources:
 
@@ -80,7 +118,7 @@ Paid:
 - Resource name + short explanation + Link to the Resource which is currently available online
 
 Final Note:
-Provide a short paragraph stating clearly if the candidate is currently far from the role and what level of effort is required to reach it. If the candidate is far from the role suggest them industry which can be better suited for them. 
+Provide a short paragraph stating clearly if the candidate is currently far from the role and what level of effort is required to reach it. If the candidate is far from the role suggest them industry which can be better suited for them.
 
 Rules:
 - ONLY output in this format
@@ -93,7 +131,7 @@ Rules:
 - Be honest, not polite
 - Think deeply before assigning score
 - In free course add youtube links, that particular company preferred courses or course provider.
-- Check the provided links are valid and operational 
+- Check the provided links are valid and operational
 `
 },
 {
