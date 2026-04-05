@@ -198,8 +198,9 @@ Rules:
 - Be accurate and realistic (no inflated scores)
 - Be honest, not polite
 - Think deeply before assigning score
-- In free course add youtube links, that particular company preferred courses or course provider
-- Check the provided links are valid and operational
+- In free course add youtube links, that particular company preferred courses or course provider.
+- Check the provided links are valid and operational, if not then provide only the course name
+- Courses needs to be in Enlish Languag only, this is a non-Negotiable.
 - If candidate is overqualified (more years of experience than required), flag it clearly and reduce score accordingly
 - If salary range in JD is significantly below candidate's current level, mention it as a concern explicitly
 - Basic skills explicitly listed in JD that are missing from resume must be listed as Core Missing Skills, not "Can increase chances"
