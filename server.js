@@ -2,9 +2,10 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
-const { google } = require("googleapis"); // 🔥 ADDED
-const pdfParse = require("pdf-parse"); // 🔥 ADDED
-const fetch = require("node-fetch"); // 🔥 ADDED (if not already installed)
+const { google } = require("googleapis");
+const pdfParseLib = require("pdf-parse");
+const pdfParse = typeof pdfParseLib === "function" ? pdfParseLib : pdfParseLib.default;
+const fetch = require("node-fetch");
 
 const app = express();
 app.use(cors());
