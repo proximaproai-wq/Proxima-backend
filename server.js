@@ -194,6 +194,19 @@ Rules:
 - ONLY write: Match Score: <number>
 - If there is any mandatory requirement in the job description and the candidate is missing the same tell them honestly how like they are to achieve that skill, example - if a BBA student or a B.com student wants to become doctor then its not possible as they don't have a basic understanding and cannot bridge that gap easily. 
 - DO NOT repeat score anywhere else
+- Strong Fit must have score between 80 and 100
+- Moderate Fit must have score between 65 and 79
+- Weak Fit must have score between 40 and 64
+- Far From Role must have score below 40
+- Fit Level Strong Fit = candidate meets almost all core requirements
+- Fit Level Moderate Fit = candidate meets most but has some core gaps
+- Fit Level Weak Fit = candidate is missing several core requirements
+- Fit Level Far From Role = candidate is fundamentally misaligned with the role
+- Score and Fit Level must always be consistent with each other
+- If they contradict each other you have made an error, fix it
+- If candidate is Far From Role score cannot exceed 39
+- If candidate is Weak Fit score cannot exceed 64
+- If candidate is missing the PRIMARY skill of the role (e.g. applying for Python role with no Python), score cannot exceed 45 regardless of other strengths
 - Keep bullets clean with "-"
 - Be accurate and realistic (no inflated scores)
 - Be honest, not polite
@@ -211,10 +224,6 @@ Rules:
 - If experience years on resume far exceed JD requirement, mention overqualification risk explicitly in Verdict Summary
 - Never assume a skill exists if it is not written on the resume
 - Do not reward seniority if the role does not require it
-- Fit Level Strong Fit = candidate meets almost all core requirements
-- Fit Level Moderate Fit = candidate meets most but has some core gaps
-- Fit Level Weak Fit = candidate is missing several core requirements
-- Fit Level Far From Role = candidate is fundamentally misaligned with the role
 `
           },
           {
