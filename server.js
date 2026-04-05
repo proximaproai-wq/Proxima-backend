@@ -3,7 +3,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const { google } = require("googleapis");
-const pdfParse = require("pdf-parse/lib/pdf-parse.js");
+const pdfjsLib = require("pdfjs-dist/legacy/build/pdf.js");
 const fetch = require("node-fetch");
 
 const app = express();
@@ -35,8 +35,20 @@ const response = await drive.files.get(
 );
 
 const buffer = Buffer.from(response.data);
-const pdfData = await pdfParse(buffer);
-return pdfData.text;
+const uint8Array = new Uint8Array(buffer);
+
+const loadingTask = pdfjsLib.getDocument({ data: uint8Array });
+const pdf = await loadingTask.promise;
+
+let fullText = "";
+for (let i = 1; i <= pdf.numPages; i++) {
+const page = await pdf.getPage(i);
+const content = await page.getTextContent();
+const strings = content.items.map(item => item.str);
+fullText += strings.join(" ") + "\n";
+}
+
+return fullText;
 }
 
 // 🔥 YOUR ANALYZE API
