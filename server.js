@@ -99,6 +99,14 @@ Clearly mention if they are:
 
 Match Score: <number only>
 
+Score Breakdown:
+- Base Score: 100
+- [Missing skill or issue]: -<number> points
+- [Missing skill or issue]: -<number> points
+- [Missing skill or issue]: -<number> points
+- [Missing skill or issue]: -<number> points
+- Final Score: <number>
+
 Missing Skills:
 - Bullet point - Core Missing Skill
 - Bullet point - Core Missing Skill
@@ -154,6 +162,11 @@ Rules:
 - If experience years on resume far exceed JD requirement, mention overqualification risk explicitly in Verdict Summary
 - Never assume a skill exists if it is not written on the resume
 - Do not reward seniority if the role does not require it
+- Score Breakdown must always start at Base Score: 100 and deduct points for every gap found
+- Every deduction in Score Breakdown must have a clear reason written next to it
+- Final Score in Score Breakdown must exactly match the Match Score above
+- Deductions must be honest and mathematical - if 4 core skills are missing at 5-8 points each, the math must reflect that
+- Score Breakdown must appear immediately after Match Score and before Missing Skills
 `
 },
 {
