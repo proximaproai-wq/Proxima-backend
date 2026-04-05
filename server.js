@@ -64,7 +64,7 @@ headers: {
 Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
 },
 body: JSON.stringify({
-model: "gpt-4o-mini",
+model: "gpt-5.4-nano"
 messages: [
 {
 role: "system",
