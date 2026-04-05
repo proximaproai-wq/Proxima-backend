@@ -1,86 +1,141 @@
 const express = require("express");
 const cors = require("cors");
+const rateLimit = require("express-rate-limit");
 require("dotenv").config();
 
 const { google } = require("googleapis");
 const pdfjsLib = require("pdfjs-dist/legacy/build/pdf.js");
 
+// 🔒 STARTUP ENV VAR CHECKS
+if (!process.env.GOOGLE_SERVICE_ACCOUNT) {
+  console.error("❌ Missing GOOGLE_SERVICE_ACCOUNT");
+  process.exit(1);
+}
+if (!process.env.OPENAI_API_KEY) {
+  console.error("❌ Missing OPENAI_API_KEY");
+  process.exit(1);
+}
+
 const app = express();
-app.use(cors());
+
+// 🔒 CORS - RESTRICTED TO YOUR DOMAIN ONLY
+app.use(cors({
+  origin: [
+    "https://amazing-sprinkles-c573ab.netlify.app",
+    "http://localhost:3000"
+  ]
+}));
+
 app.use(express.json());
+
+// 🔒 RATE LIMITER - MAX 5 REQUESTS PER IP PER 15 MINUTES
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5,
+  message: {
+    success: false,
+    message: "Too many requests, please try again after 15 minutes"
+  }
+});
+
+app.use("/analyze", limiter);
 
 // 🔥 GOOGLE DRIVE AUTH SETUP (ADDED)
 const auth = new google.auth.GoogleAuth({
-credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT),
-scopes: ["https://www.googleapis.com/auth/drive.readonly"]
+  credentials: JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT),
+  scopes: ["https://www.googleapis.com/auth/drive.readonly"]
 });
 
 const drive = google.drive({ version: "v3", auth });
 
 // 🔥 FUNCTION TO EXTRACT FILE ID FROM DRIVE LINK (ADDED)
 function extractFileId(url) {
-const match = url.match(/[-\w]{25,}/);
-return match ? match[0] : null;
+  const match = url.match(/[-\w]{25,}/);
+  return match ? match[0] : null;
 }
 
 // 🔥 FUNCTION TO DOWNLOAD + EXTRACT PDF TEXT (ADDED)
 async function getResumeTextFromDrive(fileUrl) {
-const fileId = extractFileId(fileUrl);
-if (!fileId) throw new Error("Invalid Google Drive link");
+  const fileId = extractFileId(fileUrl);
+  if (!fileId) throw new Error("Invalid Google Drive link");
 
-const response = await drive.files.get(
-{ fileId, alt: "media" },
-{ responseType: "arraybuffer" }
-);
+  const response = await drive.files.get(
+    { fileId, alt: "media" },
+    { responseType: "arraybuffer" }
+  );
 
-const buffer = Buffer.from(response.data);
-const uint8Array = new Uint8Array(buffer);
+  const buffer = Buffer.from(response.data);
+  const uint8Array = new Uint8Array(buffer);
 
-const loadingTask = pdfjsLib.getDocument({ data: uint8Array });
-const pdf = await loadingTask.promise;
+  const loadingTask = pdfjsLib.getDocument({ data: uint8Array });
+  const pdf = await loadingTask.promise;
 
-let fullText = "";
-for (let i = 1; i <= pdf.numPages; i++) {
-const page = await pdf.getPage(i);
-const content = await page.getTextContent();
-const strings = content.items.map(item => item.str);
-fullText += strings.join(" ") + "\n";
-}
+  let fullText = "";
+  for (let i = 1; i <= pdf.numPages; i++) {
+    const page = await pdf.getPage(i);
+    const content = await page.getTextContent();
+    const strings = content.items.map(item => item.str);
+    fullText += strings.join(" ") + "\n";
+  }
 
-return fullText;
+  return fullText;
 }
 
 // 🔥 YOUR ANALYZE API
 app.post("/analyze", async (req, res) => {
-try {
-let { resume, jobDescription } = req.body;
+  try {
+    let { resume, jobDescription } = req.body;
 
-if (!resume || !jobDescription) {
-return res.status(400).json({
-success: false,
-message: "Missing resume or job description"
-});
-}
+    if (!resume || !jobDescription) {
+      return res.status(400).json({
+        success: false,
+        message: "Missing resume or job description"
+      });
+    }
 
-// 🔥 NEW: HANDLE GOOGLE DRIVE LINK
-if (resume.includes("drive.google.com")) {
-console.log("📄 Fetching resume from Google Drive...");
-resume = await getResumeTextFromDrive(resume);
-}
+    // 🔒 INPUT SIZE VALIDATION
+    if (resume.length > 50000) {
+      return res.status(400).json({
+        success: false,
+        message: "Resume text is too large"
+      });
+    }
 
-// 🔥 CALL OPENAI
-const response = await fetch("https://api.openai.com/v1/chat/completions", {
-method: "POST",
-headers: {
-"Content-Type": "application/json",
-Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
-},
-body: JSON.stringify({
-model: "gpt-4o-mini",
-messages: [
-{
-role: "system",
-content: `
+    if (jobDescription.length > 20000) {
+      return res.status(400).json({
+        success: false,
+        message: "Job description is too large"
+      });
+    }
+
+    // 🔒 GOOGLE DRIVE LINK VALIDATION
+    const allowedDrivePattern = /^https:\/\/drive\.google\.com\//;
+    if (resume.includes("drive.google.com") && !allowedDrivePattern.test(resume)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid Google Drive link"
+      });
+    }
+
+    // 🔥 NEW: HANDLE GOOGLE DRIVE LINK
+    if (resume.includes("drive.google.com")) {
+      console.log("📄 Fetching resume from Google Drive...");
+      resume = await getResumeTextFromDrive(resume);
+    }
+
+    // 🔥 CALL OPENAI
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system",
+            content: `
 You are a professional career analyst.
 
 Analyze the resume against the job description and return the output STRICTLY in the format below.
@@ -159,44 +214,44 @@ Rules:
 - Fit Level Weak Fit = candidate is missing several core requirements
 - Fit Level Far From Role = candidate is fundamentally misaligned with the role
 `
-},
-{
-role: "user",
-content: `
+          },
+          {
+            role: "user",
+            content: `
 RESUME:
 ${resume}
 
 JOB DESCRIPTION:
 ${jobDescription}
 `
-}
-],
-temperature: 0.7
-})
-});
+          }
+        ],
+        temperature: 0.7
+      })
+    });
 
-const data = await response.json();
+    const data = await response.json();
 
-const output =
-data.choices?.[0]?.message?.content || "Analysis failed.";
+    const output =
+      data.choices?.[0]?.message?.content || "Analysis failed.";
 
-res.json({
-success: true,
-data: output
-});
+    res.json({
+      success: true,
+      data: output
+    });
 
-} catch (error) {
-console.error("ERROR:", error);
-res.status(500).json({
-success: false,
-message: "Server error"
-});
-}
+  } catch (error) {
+    console.error("ERROR:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error"
+    });
+  }
 });
 
 // 🔥 RENDER PORT FIX
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-console.log("Server running on port " + PORT);
+  console.log("Server running on port " + PORT);
 });
