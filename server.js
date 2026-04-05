@@ -167,6 +167,12 @@ Rules:
 - Final Score in Score Breakdown must exactly match the Match Score above
 - Deductions must be honest and mathematical - if 4 core skills are missing at 5-8 points each, the math must reflect that
 - Score Breakdown must appear immediately after Match Score and before Missing Skills
+- The Final Score in Score Breakdown must be calculated strictly as: 
+  100 minus all deductions added together. No exceptions.
+- Match Score shown at the top must be copy of Final Score from breakdown. 
+  They must ALWAYS be identical. If they differ you have made an error.
+- Salary mismatch must ALWAYS be included as a deduction in Score Breakdown 
+  if the JD salary is visibly lower than expected for candidate's experience level
 `
 },
 {
