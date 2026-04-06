@@ -268,6 +268,11 @@ ${jobDescription}
   }
 });
 
+// 🔥 HEALTH CHECK ROUTE FOR CRON / RENDER WAKE-UP (ADDED)
+app.get("/", (req, res) => {
+res.status(200).send("Proxima backend is live 🚀");
+});
+
 // 🔥 RENDER PORT FIX
 const PORT = process.env.PORT || 3000;
 
