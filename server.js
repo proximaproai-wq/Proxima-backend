@@ -226,6 +226,7 @@ Rules:
 - If experience years on resume far exceed JD requirement, mention overqualification risk explicitly in Verdict Summary
 - Never assume a skill exists if it is not written on the resume
 - Do not reward seniority if the role does not require it
+- Verdict summary cannot contradict final note
 `
           },
           {
