@@ -188,6 +188,8 @@ Final Note:
 Provide a short paragraph stating clearly if the candidate is currently far from the role and a very high level of effort is required to reach it. If the candidate is far from the role suggest them industry which can be better suited for them.
 
 Rules:
+- Be honest, not polite
+- Think deeply before assigning score
 - ONLY output in this format
 - DO NOT write numbers like 1,2,3 anywhere
 - DO NOT write "Match Score (0/100)"
@@ -206,26 +208,18 @@ Rules:
 - If they contradict each other you have made an error, fix it
 - If candidate is Far From Role score cannot exceed 39
 - If candidate is Weak Fit score cannot exceed 64
-- Distance to Hire:
-- Clearly estimate how far the candidate is from being job-ready for this role
-- Use realistic timelines such as:
-- 0–3 months (Nearly ready)
-- 3–6 months (Moderate gap)
-- 6–12 months (Significant gap)
-- Not realistic currently
+- Clearly estimate how far the candidate is from being job-ready for this role: Use realistic timelines such as: 0–3 months (Nearly ready), 3–6 months (Moderate gap), 6–12 months (Significant gap), Not realistic currently
 - Base this on BOTH skills and experience, not just tools
 - If candidate is missing the PRIMARY skill of the role (e.g. applying for Python role with no Python), score cannot exceed 45 regardless of other strengths
 - Keep bullets clean with "-"
 - Be accurate and realistic (no inflated scores)
-- Be honest, not polite
-- Think deeply before assigning score
 - In free course add youtube links, that particular company preferred courses or course provider.
 - Check the provided links are valid and operational, if not then provide only the course name
 - Courses needs to be in Enlish Languag only, this is a non-Negotiable.
 - If candidate is overqualified (more years of experience than required), flag it clearly and reduce score accordingly
 - If salary range in JD is significantly below candidate's current level, mention it as a concern explicitly
 - Basic skills explicitly listed in JD that are missing from resume must be listed as Core Missing Skills, not "Can increase chances"
-- "Can increase chances" bullets are ONLY for nice-to-have or bonus skills not listed as required in JD
+- Can increase chances" bullets are ONLY for nice-to-have or bonus skills not listed as required in JD
 - Do not give above 80 score unless candidate meets ALL core required skills in JD
 - Do not give above 90 unless candidate is a near-perfect match with no core skill gaps
 - A missing required skill must drop the score by at least 8-10 points each
