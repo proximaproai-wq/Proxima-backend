@@ -206,6 +206,14 @@ Rules:
 - If they contradict each other you have made an error, fix it
 - If candidate is Far From Role score cannot exceed 39
 - If candidate is Weak Fit score cannot exceed 64
+- Distance to Hire:
+- Clearly estimate how far the candidate is from being job-ready for this role
+- Use realistic timelines such as:
+- 0–3 months (Nearly ready)
+- 3–6 months (Moderate gap)
+- 6–12 months (Significant gap)
+- Not realistic currently
+- Base this on BOTH skills and experience, not just tools
 - If candidate is missing the PRIMARY skill of the role (e.g. applying for Python role with no Python), score cannot exceed 45 regardless of other strengths
 - Keep bullets clean with "-"
 - Be accurate and realistic (no inflated scores)
