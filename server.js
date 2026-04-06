@@ -5,6 +5,8 @@ require("dotenv").config();
 
 const { google } = require("googleapis");
 const pdfjsLib = require("pdfjs-dist/legacy/build/pdf.js");
+const multer = require("multer");
+const upload = multer();
 
 // 🔒 STARTUP ENV VAR CHECKS
 if (!process.env.GOOGLE_SERVICE_ACCOUNT) {
@@ -82,9 +84,30 @@ async function getResumeTextFromDrive(fileUrl) {
 }
 
 // 🔥 YOUR ANALYZE API
-app.post("/analyze", async (req, res) => {
+app.post("/analyze", upload.single("file"), async (req, res) => {
   try {
-    let { resume, jobDescription } = req.body;
+    let resume = req.body.resume;
+let jobDescription = req.body.jobDescription;
+
+// 🔥 HANDLE FILE UPLOAD
+if (req.file) {
+console.log("📄 Reading uploaded PDF...");
+
+const uint8Array = new Uint8Array(req.file.buffer);
+
+const loadingTask = pdfjsLib.getDocument({ data: uint8Array });
+const pdf = await loadingTask.promise;
+
+let fullText = "";
+for (let i = 1; i <= pdf.numPages; i++) {
+const page = await pdf.getPage(i);
+const content = await page.getTextContent();
+const strings = content.items.map(item => item.str);
+fullText += strings.join(" ") + "\n";
+}
+
+resume = fullText;
+}
 
     if (!resume || !jobDescription) {
       return res.status(400).json({
