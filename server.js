@@ -208,7 +208,7 @@ Paid:
 - Resource name + short explanation + Link to the Resource which is currently available online
 
 Final Note:
-Provide a short paragraph stating clearly if the candidate is currently far from the role and a very high level of effort is required to reach it. If the candidate is far from the role suggest them industry which can be better suited for them.
+Provide a short paragraph stating clearly if the candidate is currently far from the role and a very high level of effort is required to reach it. If the candidate is far from the role suggest them industry which can be better suited for them. Dont be too harsh, be realistic. 
 
 Rules:
 - Be honest, not polite
