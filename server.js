@@ -255,28 +255,50 @@ Rules:
 
 - Learning Schedule:
 
-Create a detailed week-by-week Excel-ready 
-learning schedule to bridge the skill gaps 
-identified above.
+Create a detailed learning roadmap to bridge the skill gaps identified above.
 
-If the role is misaligned with the user resume do not create a excel report.
+If the role is misaligned with the user resume, do NOT create the roadmap.
 
-Format it as a table with these exact columns:
+Return ONLY in this STRICT format (no explanations, no extra text):
+
 Week | Focus Area | Task | Resource | Time Required | Priority
 
-Rules for the Excle schedule:
-- Start from Week 1
-- Be specific, not vague
-- Time required should be realistic and according to a working professional.
-- Priority must be: High / Medium / Low
+Rules:
+- Each row must start with: Week X
+- Use "|" as separator for each column
+- Do NOT create markdown tables, borders, or headings
+- Do NOT write "YOUR LEARNING ROADMAP" or any title
+- Output only clean rows
+
+Timeline Rules:
+- Do NOT force a fixed number of weeks
+- Duration must adapt based on skill difficulty and gap level
+- Easy skills → shorter duration
+- Complex skills → longer duration (can extend to months)
+- Total plan must be realistic for a working professional
+
+Time Rules:
+- Time Required must vary (e.g. 1 hr/day, 2–3 hrs/day, 4 hrs/day)
+- Do NOT use fixed time for all rows
+- Adjust time based on difficulty of the skill
+
+Content Rules:
 - Focus on Core Missing Skills first
-- Preferred skills come after core gaps
-- Final weeks should include application preparation & resume updation
-- Total schedule should not be unrealistic and can be followed by a working professional.
-  12 weeks unless the gap to large. If the gap is to large give 24 to 52 week schedule.
-  If any professional degree is involved please mention it separately.
-- Label the table clearly as:
-  "YOUR LEARNING ROADMAP"
+- Preferred skills come after
+- Final phase must include:
+  - Resume update
+  - Job applications
+- Tasks must be actionable and practical
+- Include real resources (YouTube, Coursera, etc.)
+
+Priority Rules:
+- Must be exactly: High / Medium / Low
+
+Example (follow this format exactly):
+
+Week 1 | Python Basics | Learn syntax and variables | YouTube Python beginner tutorial | 2 hrs/day | High
+Week 2 | Python Practice | Work on datasets using Pandas | Kaggle / YouTube | 3 hrs/day | High
+Week 3 | SQL | Learn joins and queries | Coursera SQL course | 1.5 hrs/day | Medium
 `
           },
           {
