@@ -275,7 +275,7 @@ Timeline Rules:
 - Duration must adapt based on skill difficulty and gap level
 - Easy skills → shorter duration
 - Complex skills → longer duration (can extend to months)
-- Total plan must be realistic for a working professional
+- Total plan must be realistic for a working professional who works 8-10 hrs per day for 5 days
 
 Time Rules:
 - Time Required must vary (e.g. 1 hr/day, 2–3 hrs/day, 4 hrs/day)
@@ -289,6 +289,7 @@ Content Rules:
   - Resume update
   - Job applications
 - Tasks must be actionable and practical
+- The tasks should be designed while keeping in mind the candidate current skills and education 
 - Include real resources (YouTube, Coursera, etc.)
 
 Priority Rules:
