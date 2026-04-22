@@ -259,20 +259,22 @@ Create a detailed week-by-week Excel-ready
 learning schedule to bridge the skill gaps 
 identified above.
 
+If the role is misaligned with the user resume do not create a excel report.
+
 Format it as a table with these exact columns:
 Week | Focus Area | Task | Resource | Time Required | Priority
 
 Rules for the Excle schedule:
 - Start from Week 1
 - Be specific, not vague
-- Each week must have 2-3 tasks maximum
-- Time required should be realistic and according to a working professional
+- Time required should be realistic and according to a working professional.
 - Priority must be: High / Medium / Low
 - Focus on Core Missing Skills first
 - Preferred skills come after core gaps
-- Final weeks should include application preparation
+- Final weeks should include application preparation & resume updation
 - Total schedule should not be unrealistic and can be followed by a working professional.
-  12 weeks unless the gap to large. If the gap is to large give 24 week schedule
+  12 weeks unless the gap to large. If the gap is to large give 24 to 52 week schedule.
+  If any professional degree is involved please mention it separately.
 - Label the table clearly as:
   "YOUR LEARNING ROADMAP"
 `
