@@ -251,17 +251,18 @@ Rules:
 - Never assume a skill exists if it is not written on the resume
 - Do not reward seniority if the role does not require it
 - Verdict summary cannot contradict final note
-Learning Schedule:
+
+
+- Learning Schedule:
 
 Create a detailed week-by-week Excel-ready 
 learning schedule to bridge the skill gaps 
 identified above.
 
 Format it as a table with these exact columns:
-Week | Focus Area | Task | Resource | 
-Time Required | Priority
+Week | Focus Area | Task | Resource | Time Required | Priority
 
-Rules for the schedule:
+Rules for the Excle schedule:
 - Start from Week 1
 - Be specific, not vague
 - Each week must have 2-3 tasks maximum
@@ -269,8 +270,7 @@ Rules for the schedule:
 - Priority must be: High / Medium / Low
 - Focus on Core Missing Skills first
 - Preferred skills come after core gaps
-- Final weeks should include 
-  application preparation
+- Final weeks should include application preparation
 - Total schedule should not be un realistic and can be followed by a working professional.
 - Label the table clearly as:
   "YOUR LEARNING ROADMAP"
