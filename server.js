@@ -265,8 +265,7 @@ Rules for the schedule:
 - Start from Week 1
 - Be specific, not vague
 - Each week must have 2-3 tasks maximum
-- Time required should be realistic 
-  (1-2 hours per day max)
+- Time required should be realistic and according to a working professional
 - Priority must be: High / Medium / Low
 - Focus on Core Missing Skills first
 - Preferred skills come after core gaps
