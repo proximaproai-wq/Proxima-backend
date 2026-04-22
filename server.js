@@ -271,10 +271,10 @@ Rules for the schedule:
 - Preferred skills come after core gaps
 - Final weeks should include 
   application preparation
-- Total schedule should not exceed 
-  12 weeks unless gap is very large
+- Total schedule should not be un realistic and can be followed by a working professional.
 - Label the table clearly as:
   "YOUR LEARNING ROADMAP"
+- At the very end give a verified inspiration quote. Also mention that person name.
 `
           },
           {
