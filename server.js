@@ -19,6 +19,7 @@ if (!process.env.OPENAI_API_KEY) {
 }
 
 const app = express();
+app.set('trust proxy', 1); // ✅ FIX FOR RENDER
 
 // 🔒 CORS - RESTRICTED TO YOUR DOMAIN ONLY
 app.use(cors({
