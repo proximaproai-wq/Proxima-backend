@@ -271,10 +271,10 @@ Rules for the Excle schedule:
 - Focus on Core Missing Skills first
 - Preferred skills come after core gaps
 - Final weeks should include application preparation
-- Total schedule should not be un realistic and can be followed by a working professional.
+- Total schedule should not be unrealistic and can be followed by a working professional.
+  12 weeks unless the gap to large. If the gap is to large give 24 week schedule
 - Label the table clearly as:
   "YOUR LEARNING ROADMAP"
-- At the very end give a verified inspiration quote. Also mention that person name.
 `
           },
           {
