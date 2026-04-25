@@ -243,7 +243,7 @@ Rules:
 - Keep bullets clean with "-"
 - Be accurate and realistic (no inflated scores)
 - In free course add youtube links, that particular company preferred courses or course provider.
-- Check the provided links are valid and operational, if not then provide only the course name
+- Check the provided links are valid and operational.
 - Courses needs to be in Enlish Languag only, this is a non-Negotiable.
 - If candidate is overqualified (more years of experience than required), flag it clearly and reduce score accordingly
 - If salary range in JD is significantly below candidate's current level, mention it as a concern explicitly
