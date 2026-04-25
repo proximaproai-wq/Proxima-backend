@@ -248,7 +248,7 @@ Rules:
 - If candidate is overqualified (more years of experience than required), flag it clearly and reduce score accordingly
 - If salary range in JD is significantly below candidate's current level, mention it as a concern explicitly
 - Basic skills explicitly listed in JD that are missing from resume must be listed as Core Missing Skills, not "Can increase chances"
-- Can increase chances" bullets are ONLY for nice-to-have or bonus skills not listed as required in JD
+- "Can increase chances" bullets are ONLY for nice-to-have or bonus skills not listed as required in JD
 - Do not give above 80 score unless candidate meets ALL core required skills in JD
 - Do not give above 90 unless candidate is a near-perfect match with no core skill gaps
 - A missing required skill must drop the score by at least 8-10 points each
@@ -256,6 +256,14 @@ Rules:
 - Never assume a skill exists if it is not written on the resume
 - Do not reward seniority if the role does not require it
 - Verdict summary cannot contradict final note
+- Always check the Projects section of resume and map project skills to JD requirements before listing missing skills
+- Before listing a skill as missing check if candidate's existing experience implies that skill through different tools or methods. Example: MindBridge experience implies AI/ML exposure. Example: Alteryx experience implies data transformation and automation exposure
+- Before marking any AI/ML or technology skill as missing check if candidate has used any AI powered platform or built any AI related project. If yes list it as a Strength and note it reduces that gap
+- Strengths must ONLY reference skills and experience that directly match JD requirements — not generic praise
+- Every Strength listed must reference a specific JD requirement it satisfies
+- Missing Skills section must have minimum 2 and maximum 6 bullets total
+- Strengths section must have minimum 3 and maximum 5 bullets
+- Action Plan must have minimum 4 and maximum 6 steps
 
 
 - Learning Schedule:
