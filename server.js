@@ -191,9 +191,14 @@ Strengths:
 - Bullet point
 - Bullet point
 - Bullet point
+- Bullet point
+- Bullet point
+- Bullet point
+- Bullet point
+
 
 Action Plan:
-- Step-by-step bullet points to improve
+- Step-by-step bullet points to improve the candidates chances to get that particular job or be a better candidate.
 
 Recommended Resources:
 
@@ -289,8 +294,7 @@ Content Rules:
   - Resume update
   - Job applications
 - Tasks must be actionable and practical
-- The tasks should be designed while keeping in mind the candidate current skills and education 
-- Include real resources (YouTube, Coursera, etc.)
+- The tasks should be designed while keeping in mind the candidate current skills and educationursera, etc.)
 
 Priority Rules:
 - Must be exactly: High / Medium / Low
